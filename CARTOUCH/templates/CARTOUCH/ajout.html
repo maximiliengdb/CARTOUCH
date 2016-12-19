@@ -1,0 +1,28 @@
+{% extends "CARTOUCH/base.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<body id="page-top">
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Ajouter une CARTOUCHE</h2>
+
+
+                         <form action="{% url "CARTOUCH.views.ajout_cartouche" %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                    <input class="btn-block" type="submit" value="AJOUTER" />
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+{% endblock %}
+   

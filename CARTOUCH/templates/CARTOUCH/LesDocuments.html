@@ -1,0 +1,85 @@
+{% extends "CARTOUCH/base.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<body id="page-top">
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                
+                    <h2>Les Cartouches en {{matiere}}</h2> </br>
+                    
+                    <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="margin-bottom : 10px;">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Tous les types</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Cours</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Exercices</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Annales</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                
+                                {% for f in cartouches %}
+                                       
+                                        <div class="col-md-4"> 
+                                         <a href="/document/?ref={{f.id}}" type="button" class="btn btn-default btn-lg btn-block">{{f.nom}} </b> <p style="text-transform: lowercase; font-size : 11px;">par {{f.auteur}}</p> </a>
+                                        </div>                 
+                                        
+                                {% endfor %}
+                                
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                
+                                {% for f in cartouches_cours %}
+                                
+                                <div class="col-md-4"> 
+                                   <a href="/document/?ref={{f.id}}" type="button" class="btn btn-default btn-lg btn-block">{{f.nom}} </b> <p style="text-transform: lowercase; font-size : 11px;">par {{f.auteur}}</p> </a>
+                                </div> 
+                                
+                                {% endfor %}
+                                
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                
+                                {% for f in cartouches_exo %}
+                                
+                                <div class="col-md-4"> 
+                                  <a href="/document/?ref={{f.id}}" type="button" class="btn btn-default btn-lg btn-block">{{f.nom}} </b> <p style="text-transform: lowercase; font-size : 11px;">par {{f.auteur}}</p> </a>
+                                </div> 
+                                
+                                {% endfor %}
+                                
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="settings">
+                                
+                                {% for f in cartouches_annale %}
+                                
+                                <div class="col-md-4"> 
+                                  <a href="/document/?ref={{f.id}}" type="button" class="btn btn-default btn-lg btn-block">{{f.nom}} </b> <p style="text-transform: lowercase; font-size : 11px;">par {{f.auteur}}</p> </a>
+                                </div> 
+                                {% endfor %}
+                                
+                            </div>
+
+
+                        </div>
+
+                        
+                        
+                        
+                        
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+{% endblock %}
+   
