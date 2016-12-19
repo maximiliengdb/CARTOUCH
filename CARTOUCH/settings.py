@@ -25,7 +25,11 @@ SECRET_KEY = 'n3kc%^@7y7=t(1(ab$o-=oyzdyu9r8r^pou$i+w53052j17xhq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    
+    'maximiliengdb.pythonanywhere.com',
+    
+    ]
 
 
 # Application definition
