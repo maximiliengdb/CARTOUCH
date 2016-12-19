@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     
     'maximiliengdb.pythonanywhere.com',
-    
+    'www.maximiliengdb.pythonanywhere.com',
+    '.pythonanywhere.com',
+    '.googleapis.com',
     ]
 
 
