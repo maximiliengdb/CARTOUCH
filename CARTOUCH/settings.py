@@ -129,5 +129,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = "/home/maximiliengdb/CARTOUCH/static"
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = '/home/maximiliengdb/CARTOUCH/media'
