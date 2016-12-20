@@ -130,4 +130,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = "/home/maximiliengdb/CARTOUCH/static"
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'https://www.pythonanywhere.com/user/maximiliengdb/files/home/maximiliengdb/CARTOUCH/media/'
+MEDIA_ROOT = '/var/www/static/media'
