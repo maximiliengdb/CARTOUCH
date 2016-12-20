@@ -46,5 +46,5 @@ class Cartouche(models.Model):
 class Fichier(models.Model):
     
     cartouche = models.ForeignKey(Cartouche)
-    upload = models.FileField(upload_to="")
+    upload = models.FileField(upload_to="document/")
     
