@@ -13,4 +13,8 @@ urlpatterns = [
     url(r'^document/(?P<ref>)$', views.document, name='document'),
     url(r'^lesmatieres/', views.lesmatieres, name='documents'),
     url(r'^mdp/', views.mdp, name='mdp'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+] 
+
+
+if settings.DEBUG is True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
