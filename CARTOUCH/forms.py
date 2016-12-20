@@ -6,26 +6,40 @@ from django.forms.widgets import Widget
 
 class Formulaire_Ajout_Cartouche (forms.ModelForm):
     
-        file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
-        
+        fichiers = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+        labels = {
+            'file_field' : (''),
+            }
         class Meta:
             model = Cartouche
-            fields = ['nom', 'description', 'matiere', 'auteur', 'type']
+            fields = ['nom', 'description', 'auteur', 'matiere', 'type']
             widgets = {
-            'nom' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Titre'}),
-            'description' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Description'}),
-
-            'auteur' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Auteur'}),
+            'nom' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Un petit titre'}),
+            'description' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': "Une petite description"}),
+            'auteur' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Merci qui?'}),
         }
+            
+            labels ={
+        'nom' : (''),
+        'description' : (''),
+        'auteur' : (''),
+        }
+
             
 class Formulaire_Ajout_Info (forms.ModelForm):
     
         
         class Meta:
             model = Infos
-            fields = ['titre', 'info', 'auteur']
+            fields = ['titre', 'auteur', 'info']
             widgets = {
-            'titre' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Titre'}),
-            'info' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': "L'info"}),
-            'auteur' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Auteur'}),
+            'titre' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Un petit titre'}),
+            'info' : forms.Textarea (attrs={'class': 'form-control', 'placeholder': "L'info"}),
+            'auteur' : forms.TextInput (attrs={'class': 'form-control', 'placeholder': 'Merci qui?'}),
+        }
+            
+            labels ={
+        'titre' : (''),
+        'info' : (''),
+        'auteur' : (''),
         }

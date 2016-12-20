@@ -38,8 +38,18 @@ def home(request):
         return redirect(mdp)
     
     try :
-        cartouches = Cartouche.objects.all()[5:]
-        infos = Infos.objects.all()[2:]
+        cartouches = Cartouche.objects.all()
+        taille = len(cartouches)
+        moinscinq = taille-5
+        cartouches = Cartouche.objects.all()[moinscinq:taille]
+        infos = Infos.objects.all()
+        taille = len(cartouches)
+        moinscinq = taille-5
+        infos = Infos.objects.all()[moinscinq:taille]
+    
+        info = request.session['alerte']
+        del request.session['alerte']
+        
     except : 
         pass
     
@@ -65,7 +75,7 @@ def ajout_cartouche(request):
             matiere = form.cleaned_data['matiere']
             type = form.cleaned_data['type']
 
-            fichiers = request.FILES.getlist('file_field')
+            fichiers = request.FILES.getlist('fichier')
             
             cartouche = Cartouche(nom = nom, description = description, auteur = auteur, matiere = matiere, type = type)
             cartouche.save()
@@ -74,7 +84,11 @@ def ajout_cartouche(request):
             for f in fichiers:
                 fichier = Fichier(upload=f, cartouche = cartouche)
                 fichier.save()
-                
+             
+             
+            request.session['alerte'] = "Ta cartouche a bien été envoyé! "   
+            
+            return redirect('home')
     else: 
         form = Formulaire_Ajout_Cartouche()  
     
@@ -104,7 +118,10 @@ def ajout_info(request):
             info.save()
             
          
-                
+        request.session['alerte'] = "Ton info a bien été envoyé! "   
+            
+        return redirect('home') 
+           
     else: 
         form = Formulaire_Ajout_Info()  
     
