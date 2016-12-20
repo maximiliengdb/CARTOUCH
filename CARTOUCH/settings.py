@@ -128,5 +128,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = "/home/cartouch/CARTOUCH/static"
 
-MEDIA_ROOT = "/home/cartouch/CARTOUCH/static/media"
+MEDIA_ROOT = "/home/cartouch/CARTOUCH/media"
 MEDIA_URL = '/media/'
