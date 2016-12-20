@@ -22,6 +22,7 @@
                             <p>Les fichiers :</p>
                             
                             {% for f in documents %}
+                            {{f.upload.url}}
                                 <div class="col-md-6"> 
                                 <a href="{{f.upload.url}}" type="button" class="btn btn-default btn-lg btn-block" style="font-size: 13px;"> {{f.upload|truncatechars_html:20}} </b></a>
                                 </div> 
