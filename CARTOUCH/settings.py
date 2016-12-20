@@ -128,5 +128,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = "/home/maximiliengdb/CARTOUCH/static"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = "/home/maximiliengdb/CARTOUCH/static/media"
 MEDIA_URL = '/media/'
