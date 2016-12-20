@@ -33,7 +33,6 @@ class Infos(models.Model):
 class Cartouche(models.Model):
     
     nom = models.CharField(max_length=30)
-    date_fichier = models.DateTimeField(auto_now=True)
     description = models.CharField(max_length=60)
     auteur = models.CharField(max_length=60)
     type = models.CharField(
