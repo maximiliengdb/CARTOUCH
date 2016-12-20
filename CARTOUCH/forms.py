@@ -20,10 +20,10 @@ class Formulaire_Ajout_Cartouche (forms.ModelForm):
         }
             
             labels ={
-        'nom' : (''),
-        'description' : (''),
-        'auteur' : (''),
-        }
+                'nom' : (''),
+                'description' : (''),
+                'auteur' : (''),
+                }
 
             
 class Formulaire_Ajout_Info (forms.ModelForm):
@@ -39,7 +39,7 @@ class Formulaire_Ajout_Info (forms.ModelForm):
         }
             
             labels ={
-        'titre' : (''),
-        'info' : (''),
-        'auteur' : (''),
-        }
+                'titre' : (''),
+                'info' : (''),
+                'auteur' : (''),
+                }
