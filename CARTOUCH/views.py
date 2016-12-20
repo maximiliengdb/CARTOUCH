@@ -75,7 +75,7 @@ def ajout_cartouche(request):
             matiere = form.cleaned_data['matiere']
             type = form.cleaned_data['type']
 
-            fichiers = request.FILES.getlist('fichier')
+            fichiers = request.FILES.getlist('file_field')
             
             cartouche = Cartouche(nom = nom, description = description, auteur = auteur, matiere = matiere, type = type)
             cartouche.save()

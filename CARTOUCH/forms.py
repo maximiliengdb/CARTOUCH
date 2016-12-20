@@ -6,7 +6,7 @@ from django.forms.widgets import Widget
 
 class Formulaire_Ajout_Cartouche (forms.ModelForm):
     
-        fichiers = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+        file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
         labels = {
             'file_field' : (''),
             }
